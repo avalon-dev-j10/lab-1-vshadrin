@@ -1,18 +1,47 @@
 package ru.avalon.java.dev.j10.labs;
-
 import ru.avalon.java.dev.j10.labs.models.Person;
+import ru.avalon.java.dev.j10.labs.commons.Address;
 
 public class Main {
 
-    Main() {
+    private static String ivanovFullName;
+    private static String ivanovFullAddress;
+    private static String smithFullName;
+    private static String smithFullAddress;
+    
+    
+    
+   public static void main(String[] args) {
 
         /*
          * FIXME(Студент): Измените определение метода так, чтобы он стал точкой входа в приложение.
          */
 
-        Person ivanov = null;
-        Person smith = null;
+        
+        
+        
+        
+        Person ivanov = new Person("Иванов","", "Иван", "Иванович");
+        Address ivanovAddress = new Address ("Россия","Омск","Улица Ленина", "4", "5");
+        Address smithAddress = new Address ("Англия","Дувр","Main street", "11", "3");
+        Person smith = new Person("John","Edvard", "", "Smith");
 
+        
+       String ivanovFullName = ivanov.getFullName();
+       String ivanovFullAddress = ivanovAddress.getAddress();
+       String smithFullName = smith.getFullName();
+       String smithFullAddress = smithAddress.getAddress();
+       
+       System.out.println(ivanovFullName);
+       System.out.println(ivanovFullAddress);
+       System.out.println(smithFullName); 
+       System.out.println(smithFullAddress);
+        
+        
+        
+        
+        
+        
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
          *

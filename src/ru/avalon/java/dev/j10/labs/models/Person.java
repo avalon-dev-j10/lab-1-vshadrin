@@ -12,7 +12,8 @@ package ru.avalon.java.dev.j10.labs.models;
  * </ol>
  */
 public class Person {
-
+    
+    
     /*
      * TODO(Студент): Создайте класс Address.
      *
@@ -28,7 +29,26 @@ public class Person {
      * 4. Подумайте над тем, какие методы должны быть объявлены
      *    в классе.
      */
+    
+    // помоему вышеописанное задание не отсюда
 
+    private String name;
+    private String secondName;
+    private String fatherName;
+    private String surname;
+    private String fullName;
+    private char firstLetter; // используется в случае, если у человека нет отчества, но есть второе имя
+    
+    
+    public Person(String name,String secondName,String fatherName, String surname){
+        this.name = name;
+        this.secondName = secondName;
+        this.fatherName = fatherName;
+        this.surname = surname;
+        
+    }
+    
+    
     /**
      * Возврвщает полное имя человека.
      * <p>
@@ -46,13 +66,27 @@ public class Person {
      *
      * @return имя человека в виде строки.
      */
+    
+    
     public String getFullName() {
+        
+        if (secondName == ("")){
+            fullName = name+" "+fatherName+" "+surname;
+        } else if (fatherName == ("") ){
+            firstLetter = secondName.charAt(firstLetter); // Достаем первую букву из String secondName
+            fullName = name+" "+firstLetter+". "+surname;
+        }else if (secondName == ("") && fatherName == ("") ){
+            fullName = name+" "+surname;
+        }
+        
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        return null;
+        return fullName;
     }
-
+    
+    
+    // Этот геттер здесь не нужен. Он реализован в классе Address
     /**
      * Возвращает адрес, по которому проживает человек.
      * <p>
