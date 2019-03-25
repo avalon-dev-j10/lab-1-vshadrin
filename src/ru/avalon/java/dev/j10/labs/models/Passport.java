@@ -24,17 +24,53 @@ public class Passport {
     private String birthday;
     private String passpDate; // Дата выдачи пасспорта
     private String ufms; // УФМС России
-    
-    public Passport (String name, String secondName, String fatherName,String surname, String birthday, String passpDate, String ufms){ 
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public void setSecondName(String secondName) {
         this.secondName = secondName;
+    }
+
+    public void setFatherName(String fatherName) {
         this.fatherName = fatherName;
+    }
+
+    public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    public void setPasspDate(String passpDate) {
         this.passpDate = passpDate;
+    }
+
+    public void setUfms(String ufms) {
         this.ufms = ufms;
     }
-    // про перегрузку конструкторов помню, но не считаю необходимым использовать. Все поля должны быть заполнены! Паспорт всё таки, а не бумажка.
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String getFatherName() {
+        return fatherName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+    
+    
+    
     
     public String getPassportData (){
         String passportData = name+" "+secondName+" "+fatherName+" "+surname+" "+birthday+" "+passpDate+" "+ufms;

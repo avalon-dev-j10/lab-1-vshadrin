@@ -1,13 +1,10 @@
 package ru.avalon.java.dev.j10.labs;
 import ru.avalon.java.dev.j10.labs.models.Person;
 import ru.avalon.java.dev.j10.labs.commons.Address;
+import ru.avalon.java.dev.j10.labs.models.Passport;
 
 public class Main {
 
-    private static String ivanovFullName;
-    private static String ivanovFullAddress;
-    private static String smithFullName;
-    private static String smithFullAddress;
     
     
     
@@ -20,28 +17,53 @@ public class Main {
 
         
         
+       Person ivanov = new Person();
+       Person smith = new Person();
         
-        
-        Person ivanov = new Person("Иванов","", "Иван", "Иванович");
-        Address ivanovAddress = new Address ("Россия","Омск","Улица Ленина", "4", "5");
-        Address smithAddress = new Address ("Англия","Дувр","Main street", "11", "3");
-        Person smith = new Person("John","Edvard", "", "Smith");
-
-        
-       String ivanovFullName = ivanov.getFullName();
-       String ivanovFullAddress = ivanovAddress.getAddress();
-       String smithFullName = smith.getFullName();
-       String smithFullAddress = smithAddress.getAddress();
+       Passport ivanPassp = ivanov.getPassp();
+       ivanPassp.setName("Иван");
+       ivanPassp.setSecondName("");
+       ivanPassp.setFatherName("Иванович");
+       ivanPassp.setSurname("Иванов");
+      
+       Passport smithPassp = smith.getPassp();
+       smithPassp.setName("John");
+       smithPassp.setSecondName("Edvadr");
+       smithPassp.setFatherName("");
+       smithPassp.setSurname("Smith");
        
-       System.out.println(ivanovFullName);
+              
+       Address ivanAddr = ivanov.getAddr();
+       ivanAddr.setCountry("Россия");
+       ivanAddr.setCity("Норильск");
+       ivanAddr.setStreet("Улица ленина");
+       ivanAddr.setHousNum("4");
+       ivanAddr.setFlatNum("5");
+       
+             
+       Address smithAddr = smith.getAddr();
+       smithAddr.setCountry("Англия");
+       smithAddr.setCity("Дувр");
+       smithAddr.setStreet("Main street");
+       smithAddr.setHousNum("11");
+       smithAddr.setFlatNum("3");
+       
+       String ivanovGetFullName = ivanov.getFullName();
+       String smithFullName = smith.getFullName();
+       String ivanovFullAddress = ivanov.getAddress();
+       String smithFullAddress = smith.getAddress();
+       
+       
+       
+       System.out.println(ivanovGetFullName);
        System.out.println(ivanovFullAddress);
-       System.out.println(smithFullName); 
+       
+       System.out.println();
+
+             
+       System.out.println(smithFullName);
        System.out.println(smithFullAddress);
-        
-        
-        
-        
-        
+       
         
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'

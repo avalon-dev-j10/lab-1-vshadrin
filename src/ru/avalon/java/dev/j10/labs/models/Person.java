@@ -1,5 +1,7 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+import ru.avalon.java.dev.j10.labs.commons.Address;
+
 /**
  * Представление о человеке.
  * <p>
@@ -32,23 +34,29 @@ public class Person {
     
     // помоему вышеописанное задание не отсюда
 
-    private String name;
-    private String secondName;
-    private String fatherName;
-    private String surname;
-    private String fullName;
+   
     private char firstLetter; // используется в случае, если у человека нет отчества, но есть второе имя
+    private Passport passp;
+    private Address addr;
     
-    
-    public Person(String name,String secondName,String fatherName, String surname){
-        this.name = name;
-        this.secondName = secondName;
-        this.fatherName = fatherName;
-        this.surname = surname;
+    public Person(){
+        passp = new Passport();
+        addr = new Address();
         
     }
+
+       
     
+    public Passport getPassp() {
+        return passp;
+    }
     
+    public Address getAddr() {
+       
+    return addr;
+    }
+           
+        
     /**
      * Возврвщает полное имя человека.
      * <p>
@@ -69,20 +77,21 @@ public class Person {
     
     
     public String getFullName() {
+        String fullName = null;
         
-        if (secondName == ("")){
-            fullName = name+" "+fatherName+" "+surname;
-        } else if (fatherName == ("") ){
-            firstLetter = secondName.charAt(firstLetter); // Достаем первую букву из String secondName
-            fullName = name+" "+firstLetter+". "+surname;
-        }else if (secondName == ("") && fatherName == ("") ){
-            fullName = name+" "+surname;
+        if (passp.getSecondName() == ("")){
+           fullName = passp.getName()+" "+passp.getFatherName()+" "+passp.getSurname();
+        } else if (passp.getFatherName() == ("") ){
+            firstLetter = passp.getSecondName().charAt(firstLetter); // Достаем первую букву из String secondName
+             fullName = passp.getName()+" "+firstLetter+". "+passp.getSurname();
+        }else if (passp.getSecondName() == ("") && passp.getFatherName() == ("") ){
+           fullName = passp.getName()+" "+passp.getSurname();
         }
-        
+        return fullName;
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        return fullName;
+        
     }
     
     
@@ -96,9 +105,8 @@ public class Person {
      * @return адрес регистрации в виде строки.
      */
     public String getAddress() {
-        /*
-         * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
-         */
-        return null;
+        String fullAddress ;
+        fullAddress = addr.getCountry()+" "+addr.getCity()+" "+addr.getStreet()+" Дом "+addr.getHousNum()+" Квартира "+addr.getHousNum();
+    return fullAddress;
     }
 }

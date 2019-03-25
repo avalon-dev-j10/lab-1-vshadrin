@@ -22,17 +22,48 @@ public class Address {
    private String street;
    private String housNum; // Номер дома
    private String flatNum; // Номер квартиры
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public void setHousNum(String housNum) {
+        this.housNum = housNum;
+    }
+
+    public void setFlatNum(String flatNum) {
+        this.flatNum = flatNum;
+    }
    
-   public Address(String country, String city, String street, String housNum, String flatNum){
-    this.country = country ;
-    this.city = city;
-    this.street = street;
-    this.housNum = housNum;
-    this.flatNum = flatNum;
-   }
    
-   public String getAddress () {
-    String fullAddress = country+" "+city+" "+street+" Дом "+housNum+" Квартира "+flatNum;
-    return fullAddress;
-   }
+    public String getCountry() {
+        return country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getHousNum() {
+        return housNum;
+    }
+
+    public String getFlatNum() {
+        return flatNum;
+    }
+   
+   
+   
 }
